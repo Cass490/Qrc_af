@@ -173,7 +173,7 @@ Why polynomial features? The quantum readouts are already nonlinear in the input
 
 ---
 
-## 5) Concept Notes (Plain Language)
+## 5) Concept Notes 
 
 - Ridge regression (current default)
   - Adds L2 penalty on weights: minimize `||XW − Y||^2 + λ||W||^2`
@@ -228,34 +228,11 @@ Why polynomial features? The quantum readouts are already nonlinear in the input
 
 ---
 
-## 7) How to Run
 
-1) Install dependencies (example with conda):
-```
-conda create -n qrc python=3.10 -y
-conda activate qrc
-pip install qutip numpy pandas scikit-learn matplotlib jupyter
-```
-
-2) Start Jupyter and open `qrc.ipynb`:
-```
-jupyter notebook
-```
-
-3) Configure at the top of the notebook:
-- Choose `state` (e.g., `"UTTAR PRADESH"`, `"MAHARASHTRA"`, `"WEST BENGAL"`, `"BIHAR"`)
-- Optionally adjust `L` (lags), `warmup_len`, and train/test split
-
-4) Run all cells top to bottom
-
-Alternative: execute headless and save an executed copy
-```
-jupyter nbconvert --to notebook --execute qrc.ipynb --output qrc_executed.ipynb
-```
 
 ---
 
-## 8) Hyperparameters to Tune
+## 7) Hyperparameters to Tune
 
 - Reservoir
   - `N_photons`: cavity truncation (e.g., 5–8)
