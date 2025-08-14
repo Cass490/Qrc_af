@@ -2,7 +2,7 @@
 
 This repository contains a Jupyter notebook (`qrc.ipynb`) implementing a multivariate Quantum Reservoir Computing (QRC) model for flood-risk prediction using rainfall time series. The quantum reservoir is inspired by the Tavis–Cummings model: a single bosonic cavity mode coupled to multiple two-level atoms, driven by multiple classical input channels.
 
-Got inspiration from paper: [add link and citation here]
+Got inspiration from paper: https://arxiv.org/abs/2405.04799
 
 ### What this project does
 - Builds a quantum reservoir (cavity + atoms) with QuTiP
