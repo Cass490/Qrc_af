@@ -120,33 +120,7 @@ Total Dimension: 5 × 2 × 2 × 2 = 40
 └─────────────────────────────────────────────────────────┘
 ```
 
-### Data Flow & Dimensions
-```
-Input Rainfall CSV
-├── 36 states × ~115 years = 3996 total records
-└── Filter to 1 state → 115 records
 
-Lag Processing (L=2)
-├── Original: [year₁, year₂, ..., year₁₁₅]
-├── Current:  [year₃, year₄, ..., year₁₁₅] → 113 samples
-├── Lag-1:    [year₂, year₃, ..., year₁₁₄] → 113 samples  
-└── Lag-2:    [year₁, year₂, ..., year₁₁₃] → 113 samples
-
-Split Strategy (Conservative for Small Data)
-├── Total usable: 113 samples
-├── Warmup: 28 samples (discard quantum transients)
-├── Remaining: 85 samples
-├── Train: 51 samples (60% of remaining)
-└── Test: 34 samples (40% of remaining)
-
-Feature Engineering
-├── Quantum readouts: 51×8 → 34×8 (train → test)
-├── Polynomial expansion: 8 → 44 features
-├── Ridge regularization: α=1.0
-└── Output: continuous → binary (threshold=0.5)
-```
-
----
 
 ## 3) Time-Dependent Hamiltonian Assembly
 
