@@ -297,34 +297,6 @@ jupyter nbconvert --to notebook --execute qrc.ipynb --output qrc_executed.ipynb
   - Polynomial degree: 1 (linear), 2 (current), 3 (requires more data)
   - Readout model: Ridge (default), pseudoinverse, LogisticRegression
 
----
 
-## 9) Troubleshooting
-
-- Error: “No test data available”
-  - The state may have too few points. Reduce `warmup_len`, reduce train ratio, or choose a state with more data
-
-- Error: “Feature dimension mismatch”
-  - Ensure the same `PolynomialFeatures` fitted on train is used to transform test
-  - Do not change `e_ops` between train and test slices
-
-- Error: “coeff length mismatch in mesolve”
-  - Ensure that every `coeff_array` has length `T = len(times)` and that all channels share the same length
-
----
-
-## 10) Reproducibility Notes
-
-- `np.random.seed(42)` is set in the notebook
-- The dataset is deterministic; only the train/test slicing depends on `total_len`, `warmup_len`, and ratios
-- QuTiP may print FutureWarnings about options; they do not affect results
-
----
-
-## 11) References
-
-Got inspiration from paper: [add link and citation here]
-
-If you use this work, please also cite the relevant Tavis–Cummings / Jaynes–Cummings and Quantum Reservoir Computing literature.
 
 
